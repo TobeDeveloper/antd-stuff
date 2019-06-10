@@ -8,9 +8,19 @@ export default {
     routes: [{
         path: '/',
         component: '../layout',
-        routes: [{
-            path: 'idx',
-            component: './Index'
-        }]
+        routes: [
+            {
+                path: '/',
+                component: './Index'
+            },
+            {
+                path: '/dashboard',
+                routes: [
+                    { path: '/dashboard/analysis', component: 'Dashboard/Analysis' },
+                    { path: '/dashboard/monitor', component: 'Dashboard/Monitor' },
+                    { path: '/dashboard/workspace', component: 'Dashboard/Workspace' }
+                ]
+            }
+        ]
     }]
 }
